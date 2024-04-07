@@ -1,0 +1,4 @@
+- source: presentation.qmd
+  quarto-pub:
+    - id: 76697306-2cff-4578-b91b-cc40ffa32bcf
+      url: 'https://dru.quarto.pub/road-mapping-in-real-time'

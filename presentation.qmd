@@ -1,6 +1,12 @@
 ---
 title: "Road Mapping in Real-Time: Harnessing R, Python, and Shiny for Dynamic Visualization"
-format: revealjs
+subtitle: "ShinyConf 2024"
+author: Umair Durrani and Chris Lee
+format: 
+  revealjs:
+    slide-number: true
+    highlight-style: oblivion
+    theme: [serif, custom.scss]
 bibliography: references.bib
 ---
 
@@ -9,13 +15,18 @@ bibliography: references.bib
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Zibzg5em9udHY3OW53a3g4MmNzZXByYnpybWU4bTA5ZjMzbXk3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tsULCE8QxYpaEcgd4a/giphy-downsized-large.gif)
 
 ## Distracted Driving in Ontario
+<br>
+Inattentive driving was a factor in <span style="font-size:50px; color:red;">14% of all fatalities</span> on Ontario roads in 2020.
 
-Inattentive driving was a factor in <span style="font-size:50px">14% of all fatalities</span> on Ontario roads in 2020 [@MinistryofTransportationOntario2020].
+:::footer
+Source: [@MinistryofTransportationOntario2020]
+:::
 
-## Distracted Driving Research
+## Project Overview
 
 *Mitigating Distracted Driving based on Understanding of Drivers’ Personality, Motivational, and Mobile Phone Dependency Characteristics*
 
+<br>
 Road Safety Research Partnership Program, Ministry of Transportation of Ontario.
 
 
@@ -27,10 +38,13 @@ Road Safety Research Partnership Program, Ministry of Transportation of Ontario.
 
 Develop an app that:  
 
+::: incremental
+
 * a participant can use on a touchscreen laptop  
-* connected to the driving simulator  
-* able to play **music**  
-* able to use a map to **navigate** to destination  
+* is connected to the driving simulator  
+* is able to play **music**  
+* is able to use a map to **navigate** to destination 
+:::
 
 
 ## Final Product  
@@ -61,11 +75,11 @@ Develop an app that:
 
 :::: {.column width="60%"}
 ::: {.fragment}
-R also supports socket connections    
+R supports socket connections    
 :::
 
 ::: {.fragment}
-Documentation and support available for Python `socket` module 
+But great documentation and support were available for Python `socket` module 
 :::
 ::::
 
@@ -102,10 +116,6 @@ while True:
 ```
 
 
-## 
-
-![](images/challenge_q2.png)
-
 ## How to send the car position data from driving simulator PC to the laptop?
 
 No need to send the data to the laptop
@@ -124,6 +134,9 @@ shiny::runApp("dashboard.R", port = 4155, host ="192.168.1.38")
 ## 
 
 ![](images/running_app.png)
+## 
+
+![](images/challenge_q2.png)
 
 
 ## Data is in memory
@@ -443,10 +456,17 @@ shinyApp(ui, server)
 {{< video images/demo.mp4 >}}
 
 
+## In Conclusion
+
+Redis can be very useful if you need to access data from other R/Python processes to use in your Shiny app
 
 
-## References
+## References and Resources
 
 * [Redux (Redis client for R) documentation](https://github.com/richfitz/redux)  
 
 * [Redis Python documentation](https://redis-py-doc.readthedocs.io/en/master/)  
+
+* [Slides](https://dru.quarto.pub/road-mapping-in-real-time/#/references-and-resources)  
+
+* [Slides and app source](https://github.com/durraniu/talk_shiny24_mapping) 
